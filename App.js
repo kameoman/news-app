@@ -16,11 +16,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   leftContainer: {
-    backgroundColor: 'red',
     width: 100,
   },
   rightContainer: {
-    backgroundColor: 'skyblue',
     flex: 1,
   },
 });
@@ -37,7 +35,13 @@ export default function App() {
             }}
           ></Image>
         </View>
-        <View style={styles.rightContainer} />
+        <View style={styles.rightContainer}>
+          {/* 3行で省略 */}
+          <Text numberOfLines={3}>
+          Expo is a framework and a platform for universal React applications. It is a set of tools and services built around React Native and native platforms that help you develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
+          </Text>
+          <Text>ReactNews</Text>
+        </View>
       </View>
     </View>
   );
