@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import ListItem from './components/Listitem';
+import articles from './dummies/article.json';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,35 +35,15 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  return (
-    <View style={styles.container}>
+  const items = articles.map((article, index) => {
+    return (
       <ListItem
-        imageUrl="https://picsum.photos/200/300"
-        title="Expo is a framework and a platform for universal React applications.
-          It is a set of tools and services built around React Native and native
-          platforms that help you develop, build, deploy, and quickly iterate on
-          iOS, Android, and web apps from the same JavaScript/TypeScript
-          codebase."
-        author="SampleNews"
+        imageUrl={article.urlToImage}
+        title={article.title}
+        author={article.author}
+        key={index}
       />
-      <ListItem
-        imageUrl="https://picsum.photos/200/300"
-        title="Expo is a framework and a platform for universal React applications.
-          It is a set of tools and services built around React Native and native
-          platforms that help you develop, build, deploy, and quickly iterate on
-          iOS, Android, and web apps from the same JavaScript/TypeScript
-          codebase."
-        author="SampleNews"
-      />
-      <ListItem
-        imageUrl="https://picsum.photos/200/300"
-        title="Expo is a framework and a platform for universal React applications.
-          It is a set of tools and services built around React Native and native
-          platforms that help you develop, build, deploy, and quickly iterate on
-          iOS, Android, and web apps from the same JavaScript/TypeScript
-          codebase."
-        author="SampleNews"
-      />
-    </View>
-  );
+    );
+  });
+  return <View style={styles.container}>{items}</View>;
 }
