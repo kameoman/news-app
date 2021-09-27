@@ -26,27 +26,23 @@ const styles = StyleSheet.create({
   },
 });
 
-const ListItem = () => {
+const ListItem = ({imageUrl,title, author}) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
         <Image
           style={{ width: 100, height: 100 }}
           source={{
-            uri: 'https://picsum.photos/200/300',
+            uri: imageUrl,
           }}
         ></Image>
       </View>
       <View style={styles.rightContainer}>
         {/* 3行で省略 */}
         <Text numberOfLines={3} styles={styles.text}>
-          Expo is a framework and a platform for universal React applications.
-          It is a set of tools and services built around React Native and native
-          platforms that help you develop, build, deploy, and quickly iterate on
-          iOS, Android, and web apps from the same JavaScript/TypeScript
-          codebase.
+          {title}
         </Text>
-        <Text style={styles.subText}>ReactNews</Text>
+        <Text style={styles.subText}>{author}</Text>
       </View>
     </View>
   );

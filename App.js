@@ -34,7 +34,35 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  return <View style={styles.container}>
-    <ListItem/>
-  </View>;
+  return (
+    <View style={styles.container}>
+      <ListItem
+        imageUrl="https://picsum.photos/200/300"
+        title="Expo is a framework and a platform for universal React applications.
+          It is a set of tools and services built around React Native and native
+          platforms that help you develop, build, deploy, and quickly iterate on
+          iOS, Android, and web apps from the same JavaScript/TypeScript
+          codebase."
+        author="SampleNews"
+      />
+      <ListItem
+        imageUrl="https://picsum.photos/200/300"
+        title="Expo is a framework and a platform for universal React applications.
+          It is a set of tools and services built around React Native and native
+          platforms that help you develop, build, deploy, and quickly iterate on
+          iOS, Android, and web apps from the same JavaScript/TypeScript
+          codebase."
+        author="SampleNews"
+      />
+      <ListItem
+        imageUrl="https://picsum.photos/200/300"
+        title="Expo is a framework and a platform for universal React applications.
+          It is a set of tools and services built around React Native and native
+          platforms that help you develop, build, deploy, and quickly iterate on
+          iOS, Android, and web apps from the same JavaScript/TypeScript
+          codebase."
+        author="SampleNews"
+      />
+    </View>
+  );
 }
