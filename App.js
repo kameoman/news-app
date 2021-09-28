@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, FlatList, View, SafeAreaView } from 'react-native';
 import ListItem from './components/Listitem';
-import articles from './dummies/article.json';
+import dummyArticles from './dummies/article.json';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,10 +33,18 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setArticles(dummyArticles);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={articles}
+        // 以下のitemはarticleのデータ１つずつ取り出す表記
         renderItem={({ item }) => (
           <ListItem
             imageUrl={item.urlToImage}
