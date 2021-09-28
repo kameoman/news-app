@@ -27,7 +27,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "newsApiKey": "9cb2f2f2e0cf48cd92efbe3499345751"
+      "newsApiKey": 
     }
   }
 }
